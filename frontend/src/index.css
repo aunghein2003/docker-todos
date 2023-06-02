@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply h-screen bg-gradient-to-br from-[#000428] to-[#004e92];
+  /* @apply h-screen bg-gradient-to-br from-[#3a7bd5] to-[#3a6073]; */
+}
+
 .todoList::-webkit-scrollbar {
   @apply w-[4px];
 }
