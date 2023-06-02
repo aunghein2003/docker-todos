@@ -1,19 +1,17 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
 const PORT = 5000;
-const URL = process.env.MONGO_URI;
 
-if (!URL) {
-  throw new Error("Mongo Uri was not found!");
-}
+app.use(express.json());
 
-mongoose
-  .connect(URL)
-  .then(() => {
-    console.log("Connected to mongodb");
-  })
-  .catch((err) => console.log("Error connecting to mongodb", err));
+//Database
+require("./config/db");
+
+//Routes - Todos
+app.use("/todos", require("./routes/todos"));
 
 app.listen(PORT, () => console.log(`Listen on ${PORT}`));
