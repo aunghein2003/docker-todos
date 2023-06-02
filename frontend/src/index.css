@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.todoList::-webkit-scrollbar {
+  @apply w-[4px];
+}
+
+.todoList::-webkit-scrollbar-track {
+  @apply bg-slate-200;
+}
+
+.todoList::-webkit-scrollbar-thumb {
+  @apply rounded-md bg-slate-400 hover:bg-blue-500;
+}
